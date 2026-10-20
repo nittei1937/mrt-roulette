@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRT車ルーレット</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="sub-title">MIDNIGHT RACING: TOKYO • RANDOM DESTINATION</div>
+    <h1>MRT車ルーレット</h1>
+    
+    <div class="card">
+        <div class="status-message" id="statusMessage">ボタンを押してレース車両</div>
+        
+        <div class="result-heading">抽選結果</div>
+        
+        <!-- 2カラム結果スロット -->
+        <div class="result-container">
+            <div class="result-box">
+                <div class="result-label">車</div>
+                <div class="result-value" id="resCar">—</div>
+            </div>
+            <div class="result-box">
+                <div class="result-label">ハンデ</div>
+                <div class="result-value" id="resHandicap">—</div>
+            </div>
+        </div>
+        
+        <!-- 操作エリア -->
+        <div class="controls">
+            <!-- 🆕 メーカー選択プルダウン ＆ 抽選ボタン（横並び配置） -->
+            <div class="action-row">
+                <select id="manufacturerSelect" class="filter-select">
+                    <option value="none">指定なし（すべての車）</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Nissan">Nissan</option>
+                    <option value="Mazda">Mazda</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Subaru">Subaru</option>
+                    <option value="Mitsubishi">Mitsubishi</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Dodge">Dodge</option>
+                    <option value="Renault">Renault</option>
+                    <option value="Lotus">Lotus</option>
+                    <option value="Bentley">Bentley</option>
+                    <option value="Porsche">Porsche</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <button class="btn-spin" id="spinBtn">ルーレットを回す</button>
+            </div>
+            
+            <div class="footer-note">車・ハンデをそれぞれランダムに選びます</div>
+            
+            <!-- ハンデスイッチ用トグルエリア -->
+            <div class="switch-area">
+                <label class="switch-container">
+                    <span class="switch">
+                        <input type="checkbox" id="handicapToggle">
+                        <span class="slider"></span>
+                    </span>
+                    <span id="toggleLabel">ハンデ抽選機能: オフ</span>
+                </label>
+            </div>
+
+            <!-- 🆕 ハンデの種類を選択するチェックボックスエリア -->
+            <div class="handicap-categories">
+                <div class="category-title">対象にするハンデの種類（複数選択可、そこから1個選出）：</div>
+                <div class="checkbox-group">
+                    <label class="check-item"><input type="checkbox" id="chkWaiting" checked> 待機</label>
+                    <label class="check-item"><input type="checkbox" id="chkRestriction" checked> 縛り</label>
+                    <label class="check-item"><input type="checkbox" id="chkVersion" checked> バージョン</label>
+                    <label class="check-item"><input type="checkbox" id="chkView" checked> 視点</label>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
